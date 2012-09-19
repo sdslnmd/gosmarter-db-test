@@ -90,7 +90,7 @@ public class FilterAsPerUserFriendsRelevanceTest {
 		HashMap<String, Object> map = new HashMap<String, Object>();
 
 		List<Item> productFromApiListOut = productResponseServiceImpl
-				.filterAsPerUserFriendsRelevance(productFromApiList, 2);
+				.filterAsPerUserRelevance(productFromApiList, 2);
 
 		assertEquals(productFromApiListOut.size(), 1);
 		assertEquals(productFromApiListOut.get(0).getName(),

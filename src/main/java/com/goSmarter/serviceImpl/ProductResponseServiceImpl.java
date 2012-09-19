@@ -16,17 +16,10 @@ public class ProductResponseServiceImpl implements ProductResponseService {
 
 	SqlMapClientTemplate ibatisTemplate;
 
-	public List<Item> filterAsPerUserFriendsRelevance(
+	public List<Item> filterAsPerUserRelevance(
 			List<Item> productListFilteredAsperUserTaste,
 			int id) {
 
-		// TODO: Weka or Mahout implementation of recommendations of his friends
-		// and his past data
-
-		// get all the user item liked list from the database, get the brand
-		// details
-		// from that and check if the ProductFromApi list belongs to the same
-		// brand and subbrand and filter out only those items
 		List<Item> recommendedProducts = getListFromRecommendationEngine(id);
 
 		ArrayList<Item> list3 = new ArrayList<Item>();
@@ -42,13 +35,6 @@ public class ProductResponseServiceImpl implements ProductResponseService {
 		return list3;
 	}
 
-	/**
-	 * 
-	 * @param list1
-				
-	 * This is where Mahout is used
-	 * @return
-	 */
 	private List<Item> getListFromRecommendationEngine(int id) {
 		HashMap<String, Object> map = new HashMap<String, Object>();
 		map.put("userId", id);
